@@ -22,7 +22,8 @@ conda activate dh_live
 pip install --index-url https://download.pytorch.org/whl/cu124
 pip install -r requirements.txt
 cd checkpoint
-gzip -d -c render.pth.gz.001 > render.pth
+cat render.pth.gz.* > render.pth.gz
+gzip -d render.pth.gz
 ```
 ### Prepare Your Video
 Next, prepare your video using the data_preparation script. Replace YOUR_VIDEO_PATH with the path to your video:
